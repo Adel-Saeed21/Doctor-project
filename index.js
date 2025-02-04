@@ -18,6 +18,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 1;
 controls.target.set(0, 0, 0);
+
+//  mouse control
 controls.enableRotate = true;
 controls.enableZoom = true;
 controls.enablePan = false;
@@ -26,10 +28,9 @@ controls.maxDistance = 25;
 controls.maxPolarAngle = Math.PI / 2; 
 controls.minPolarAngle = 0;  
 
-//Loader use in  character
+//Loader use with  character
 const loader = new FBXLoader();
 const loaderGLB = new GLTFLoader();
-
 function loadTable() {
   loader.load(
     "./assets/table.fbx",
@@ -116,8 +117,8 @@ function setupBackground() {
 }
 
 // Add light sources
-const light = new THREE.DirectionalLight(0xffffff, 2);
-light.position.set(10, 10, 10);
+const light = new THREE.DirectionalLight(0xffffff, 2); 
+light.position.set(10, 10, 10); // to increase light 
 scene.add(light);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
