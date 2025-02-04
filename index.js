@@ -31,6 +31,7 @@ controls.minPolarAngle = 0;
 //Loader use with  character
 const loader = new FBXLoader();
 const loaderGLB = new GLTFLoader();
+
 function loadTable() {
   loader.load(
     "./assets/table.fbx",
@@ -46,22 +47,22 @@ function loadTable() {
 }
 
 //  this function use to appear man characrter
-let character;
-function loadCharacter() {
-  loader.load('./assets/Ch33_nonPBR.fbx', (fbx) => {
-    character = initCharacter(fbx);
-    scene.add(character);
-  });
-}
+// let character;
+// function loadCharacter() {
+//   loader.load('./assets/Ch33_nonPBR.fbx', (fbx) => {
+//     character = initCharacter(fbx);
+//     scene.add(character);
+//   });
+// }
 
-function initCharacter(fbx) {
-  const char = fbx;
-  char.scale.set(0.01, 0.01, 0.01);
-  char.position.set(3, 0, 0);
-  const mixer = new THREE.AnimationMixer(char);
-  char.userData = { mixer, update: (t) => mixer.update(0.01) };
-  return char;
-}
+// function initCharacter(fbx) {
+//   const char = fbx;
+//   char.scale.set(0.01, 0.01, 0.01);
+//   char.position.set(3, 0, 0);
+//   const mixer = new THREE.AnimationMixer(char);
+//   char.userData = { mixer, update: (t) => mixer.update(0.01) };
+//   return char;
+// }
 ///-----------------------------------------------------------------------------
 
 function loadPlate() {
@@ -133,7 +134,7 @@ function animate() {
 setupBackground();
 loadTable();
 animate();
-loadCharacter();
+//loadCharacter();
 loadPlate();
 loadApple();
 loadKitchen();
