@@ -2,8 +2,7 @@ import * as THREE from "three";
 import { FBXLoader } from "jsm/loaders/FBXLoader.js";
 import { OrbitControls } from "jsm/controls/OrbitControls.js";
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
-import { OBJLoader } from "jsm/loaders/OBJLoader.js";
-import { MTLLoader } from "jsm/loaders/MTLLoader.js";
+
 
 const w = window.innerWidth;
 const h = window.innerHeight;
@@ -134,7 +133,7 @@ function animate() {
 setupBackground();
 loadTable();
 animate();
-//loadCharacter();
+
 loadPlate();
 loadApple();
 loadKitchen();
